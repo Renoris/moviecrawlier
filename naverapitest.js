@@ -7,7 +7,7 @@ const {clientId, clientSecret} = require('./secret');
 const XLSX = require("xlsx")
 const countries = ['FR', 'GB', 'HK', 'JP', 'KR', 'US', 'ETC'];
 const url = "https://openapi.naver.com/v1/search/movie.json";
-const genreies = ['드라마','판타지','서부','공포','로맨스','모험','스릴러','느와르','컬트','다큐멘터리','코미디','가족','미스터리','전쟁','애니메이션','범죄','뮤지컬','SF','액션','무협','에로','서스펜스','서사','블랙코미디','실험','영화카툰','영화음악','영화패러디포스터'];
+const genreies = ['TV영화','드라마','판타지','서부','공포','로맨스','모험','스릴러','느와르','컬트','다큐멘터리','코미디','가족','미스터리','전쟁','애니메이션','범죄','뮤지컬','SF','액션','무협','에로','서스펜스','서사','블랙코미디','실험','영화카툰','영화음악','영화패러디포스터'];
 
 const queries = fs.readFileSync('/Users/applet/desktop/hangulFinish.txt', 'utf8');
 // const queries = '의더';
@@ -326,7 +326,7 @@ async function apiUse() {
             const yearto = year + 2;
             const yearfrom = year;
             do {
-                sleep(50);
+                sleep(200);
                 const params = {query, display, yearto, yearfrom, start};
                 const response = await getNaverApi(params);
 
