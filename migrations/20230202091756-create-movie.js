@@ -10,7 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       story: {
-        type: Sequelize.BLOB
+        type: Sequelize.BLOB('medium')
       },
       title: {
         type: Sequelize.STRING
@@ -43,6 +43,9 @@ module.exports = {
         type: Sequelize.STRING
       },
       user_rating: {
+        type: Sequelize.STRING
+      },
+      grade: {
         type: Sequelize.STRING
       }
     });

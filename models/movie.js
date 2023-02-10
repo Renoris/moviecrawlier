@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Movie.init({
     title: DataTypes.STRING,
-    story: DataTypes.BLOB,
+    story: DataTypes.BLOB('medium'),
     genre: DataTypes.STRING,
     country: DataTypes.STRING,
     link: DataTypes.STRING,
@@ -25,7 +25,8 @@ module.exports = (sequelize, DataTypes) => {
     director: DataTypes.STRING,
     actor: DataTypes.STRING,
     userRating: DataTypes.STRING,
-    runningTime: DataTypes.STRING
+    runningTime: DataTypes.STRING,
+    grade: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'movie',
