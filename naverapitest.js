@@ -113,14 +113,19 @@ function resolveOutLine($) {
         if (flag) {
             for (const genre of genreies) {
                 if (item.includes(genre)) {
-                    infos[1] = `${infos[1]}, ${item}`
+                    if (infos[1] === undefined) {
+                        infos[1] = genre;
+                    } else {
+                        infos[1] = `${infos[1]}, ${genre}`
+                    }
                     flag = false;
                 }
             }
         }
 
         if (flag) {
-            infos[0] = `${infos[0]}, ${item}`
+            if (infos[0] === undefined) {infos[0] = `${item}`}
+            else {infos[0] = `${infos[0]}, ${item}`}
         }
 
 
